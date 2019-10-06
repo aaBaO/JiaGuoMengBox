@@ -6,9 +6,5 @@
     开始计算
 </button>
 <view>
-正在计算{{current_progress}}/{{max_progress}}
-</view>
-<progress percent="{{100 * current_progress/(max_progress == 0? 1 : max_progress)}}"/>
-<view>
 耗时{{compute_cost_time}}ms
 </view>

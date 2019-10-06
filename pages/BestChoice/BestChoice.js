@@ -20,8 +20,6 @@ Page({
 
         computing: false,
         compute_cost_time: 0,
-        current_progress:0,
-        max_progress:0,
     },
 
     /**
@@ -213,7 +211,7 @@ Page({
 
     onClick_StartCalc:function(event){
         //单个建筑收益计算公式
-        //income = base_income * e_star * e_builiding * e_policy * e_album * e_cityMission (* e_extraBuff还不确定家国之光类buff是单独乘还是算在政策内)
+        //income = base_income * e_star * e_builiding * e_policy * e_album * e_cityMission 
         // var building_id = 300
         // var income = this.getBaseIncome(building_id, 1249) * this.getStarBuff(5) 
         // * this.getBuildingBuff(building_id) 
@@ -229,19 +227,10 @@ Page({
 
         var start_time = new Date().getTime()
         this.setData({
-            max_progress: utils.combinationCount(10,3) * utils.combinationCount(10, 3) * utils.combinationCount(10, 3),
             computing: true,
         })
 
         var count = 0
-        
-        var calc_timer = setInterval(function(){
-            console.log("in timer")
-            this.setData({
-                current_progress: count 
-            })
-        }, 100);
-
         for(var ii in icbn){
             for(var ib in bcbn){
                 for(var ir in rcbn){
@@ -252,7 +241,6 @@ Page({
             }
         } 
         console.log("finish")
-        clearInterval(calc_timer)
         this.setData({
             computing: false,
             compute_cost_time:new Date().getTime() - start_time
