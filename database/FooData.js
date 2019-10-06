@@ -1438,6 +1438,13 @@ const getPolicyData = function(policy_id){
     return null;
 }
 
+const getUpgradeCost = function(level, rare){
+    if(!this.level_cost[rare])
+        return Number.MAX_SAFE_INTEGER
+
+    return this.level_cost[rare][level]
+}
+
 module.exports = {
     buff_type : buff_type,
     building_type : building_type,
@@ -1452,4 +1459,5 @@ module.exports = {
     getBuffData: getBuffData,
     getBuildingData: getBuildingData,
     getPolicyData: getPolicyData,
+    getUpgradeCost: getUpgradeCost,
 }
