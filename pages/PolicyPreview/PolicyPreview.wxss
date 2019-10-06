@@ -1,0 +1,28 @@
+/* pages/PolicyPreview/PolicyPreview.wxss */
+.policy-title{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.policy-stage{
+    margin: 10px;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.policy-border{
+    margin: 0.2em;
+    border-width: 1px;
+    border-radius: 5px;
+    border-style: solid;
+}
+
+.policy-name{
+    font-size: 20px;
+}
+
+.policy-enhance{
+    font-size: 15px;
+    word-wrap: normal;
+}

@@ -1,0 +1,14 @@
+<!--pages/PolicyPreview/PolicyPreview.wxml-->
+<view class="policy-stage" wx:for="{{policy_list}}" wx:for-index="policy_stage_index" wx:for-item="policy_stage_item" wx:key="*this">
+    <text class="policy-title">第{{policy_stage_index+1}}阶段\n</text>
+    <block wx:for="{{policy_stage_item}}" wx:for-index="policy_index" wx:for-item="policy_item" wx:key="id">
+        <view class="policy-border">
+            <text class="policy-name">{{policy_item.display_name}}\n</text>
+            <view class="policy-enhance" wx:for="{{policy_item.enhance_value}}" wx:for-index="policy_enhance_level" wx:for-item="policy_enhance_value" 
+            wx:key="*this"
+            wx:if="{{policy_enhance_level > 0}}">
+                等级{{policy_enhance_level}}:{{buff_type[policy_item.buff_type].display_name}}[{{policy_enhance_value}}] 
+            </view>
+        </view>
+    </block>
+</view>

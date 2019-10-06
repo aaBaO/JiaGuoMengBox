@@ -1,0 +1,70 @@
+/* pages/SetConfigs/SetConfigs.wxss */
+.title{
+
+}
+
+.sub-title{
+    font-size: 1.5em;
+}
+
+.third-title{
+    text-indent: 2px;
+}
+
+.total-enhance-list{
+
+}
+
+.policy-name{
+
+}
+
+.cinput{
+    border: lightgray;
+    border-style: solid;
+    border-width: 1px;
+    margin:0.1em;
+    border-radius: 10px;
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+}
+
+.buff_for_building{
+    margin:0.1em;
+    background-color: lightgray;
+}
+
+.buff_for_building#id_0{
+    border-style:solid;
+}
+.buff_for_building#id_1{
+    border-style:solid;
+}
+.buff_for_building#id_2{
+    border-style:solid;
+}
+
+.cpicker{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.pick-selected{
+
+}
+
+.buildings_setting{
+    margin:0.1em;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.buildings_setting#industry{
+    border-color: blue;
+}
+.buildings_setting#business{
+    border-color: green;
+}
+.buildings_setting#residence{
+    border-color: red
+}

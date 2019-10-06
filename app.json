@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/CityMission/CityMission",
+    "pages/BestChoice/BestChoice",
+    "pages/PolicyPreview/PolicyPreview",
+    "pages/SetConfigs/SetConfigs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "家国梦助手",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,113 @@
+<!--pages/SetConfigs/SetConfigs.wxml-->
+<view>
+    <text class="title">输入当前配置</text>
+</view>
+
+<text class="sub-title">家国之光，活动加成</text>
+<view>
+    <!-- 直接的buff类加成 -->
+    <block wx:for="{{buff_type}}" wx:key="id">
+        <text class="third-title">{{buff_type[index].display_name}}:{{temp_settings.extra_buff[item.id].value}}%</text>
+        <input class="cinput" placeholder="输入加成%" type="number" bindinput="onInput_ExtraBuff" data-bufftype="{{item.id}}"/>
+    </block>
+</view>
+
+<text class="sub-title">政策加成</text>
+<view>
+    <block wx:for="{{policy_list}}" wx:key="*this" wx:for-index="policy_stage_index" wx:for-item="policy_stage_item">
+        <text class="third-title">政策阶段:[{{policy_stage_index+1}}]</text>
+        <view wx:for="{{policy_stage_item}}" wx:key="id" wx:for-index="policy_index" wx:for-item="policy_item">
+            <text class="policy-name">{{policy_item.display_name}}</text>
+            <slider step="1" value="{{temp_settings.policies[policy_item.id].level}}" show-value="{{true}}" max="5" bindchange="onSet_PolicyLevel" data-policyid="{{policy_item.id}}"/>
+        </view>
+    </block>
+</view>
+
+<text class="sub-title">城市任务</text>
+<view>
+    <block wx:for="{{buff_type}}" wx:key="id">
+        <text class="third-title">{{buff_type[index].display_name}}:{{temp_settings.city_missions.buff[item.id].value}}%</text>
+        <input class="cinput" placeholder="输入加成%" type="number" bindinput="onInput_CityMission" data-inputtype="buff" data-inputid="{{item.id}}"/>
+    </block>
+
+    <!-- 建筑类加成 -->
+    <view class="buff_for_building">
+        <block wx:for="{{temp_settings.city_missions.building}}" wx:for-item="item" wx:key="*this">
+            <picker class="cpicker" mode="selector" value="{{item.index}}" range="{{buildings_list}}" range-key="display_name" bindchange="onPick_CityMissionBuffBuilding" data-keyindex="{{index}}">
+                <view class="pick-selected">加成建筑：{{buildings_list[item.index].display_name}}:{{item.value}}%</view>
+            </picker>
+            <input placeholder="输入加成%" type="number" bindinput="onInput_CityMission" data-inputtype="building" data-inputindex="{{index}}" data-inputid="{{buildings_list[item.index].id}}"/>
+        </block>
+    </view>
+</view>
+
+<text class="sub-title">相册加成</text>
+<view>
+    <block wx:for="{{buff_type}}" wx:key="id">
+        <text class="third-title">{{buff_type[index].display_name}}:{{temp_settings.albums[item.id].value}}%</text>
+        <!-- 直接的buff类加成 -->
+        <input class="cinput" placeholder="输入加成%" type="number" bindinput="onInput_Album" data-bufftype="{{item.id}}"/>
+    </block>
+</view>
+
+<text class="sub-title">建筑配置</text>
+<view>
+    <!-- 配置工业建筑 -->
+    <view class="buildings_setting" id="industry">
+        <block wx:for="{{buildings_list}}" wx:for-index="buildings_index" wx:for-item="buildings_item" wx:key="id" wx:if="{{buildings_item.type==1}}">
+            <view class="buildings_setting_item" id="industry_building_{{buildings_index}}">
+                <text class="third-title">{{buildings_item.display_name}}</text>
+                <view>
+                    <text>计算开关</text>
+                    <switch checked="{{temp_settings.buildings[buildings_item.id].enabled}}" bindchange="onSwitch_BuildingEnabled" data-buildingsid="{{buildings_item.id}}" />
+                    <text>id:{{buildings_item.id}}, 建筑等级:[{{temp_settings.buildings[buildings_item.id].level}}]</text>
+                </view>
+                <text>星级</text>
+                <!-- 设置星级,没有的建筑默认为0星 -->
+                <slider step="1" value="{{temp_settings.buildings[buildings_item.id].star_level}}" show-value="{{true}}" max="5" bindchange="onSet_BuildingStarLevel" data-buildingsid="{{buildings_item.id}}"/>
+                <!-- 设置等级 当前只有1~2000等级的收益数据 -->
+                <input class="cinput" placeholder="输入建筑等级" type="number" bindinput="onInput_BuildingLevel" data-buildingsid="{{buildings_item.id}}"/>
+            </view>
+        </block>
+    </view>
+    <!-- 配置商业建筑 -->
+    <view class="buildings_setting" id="business">
+        <block wx:for="{{buildings_list}}" wx:for-index="buildings_index" wx:for-item="buildings_item" wx:key="id" wx:if="{{buildings_item.type==2}}">
+            <view class="buildings_setting_item" id="business_building_{{buildings_index}}">
+                <text class="third-title">{{buildings_item.display_name}}</text>
+                <view>
+                    <text>计算开关</text>
+                    <switch checked="{{temp_settings.buildings[buildings_item.id].enabled}}" bindchange="onSwitch_BuildingEnabled" data-buildingsid="{{buildings_item.id}}" />
+                    <text>id:{{buildings_item.id}}, 建筑等级:[{{temp_settings.buildings[buildings_item.id].level}}]</text>
+                </view>
+                <text>星级</text>
+                <!-- 设置星级,没有的建筑默认为0星 -->
+                <slider step="1" value="{{temp_settings.buildings[buildings_item.id].star_level}}" show-value="{{true}}" max="5" bindchange="onSet_BuildingStarLevel" data-buildingsid="{{buildings_item.id}}"/>
+                <!-- 设置等级 当前只有1~2000等级的收益数据 -->
+                <input class="cinput" placeholder="输入建筑等级" type="number" bindinput="onInput_BuildingLevel" data-buildingsid="{{buildings_item.id}}"/>
+            </view>
+        </block>
+    </view>
+    <!-- 配置住宅建筑 -->
+    <view class="buildings_setting" id="residence">
+        <block wx:for="{{buildings_list}}" wx:for-index="buildings_index" wx:for-item="buildings_item" wx:key="id" wx:if="{{buildings_item.type==3}}">
+            <view class="buildings_setting_item" id="residence_building_{{buildings_index}}">
+                <text class="third-title">{{buildings_item.display_name}}</text>
+                <view>
+                    <text>计算开关</text>
+                    <switch checked="{{temp_settings.buildings[buildings_item.id].enabled}}" bindchange="onSwitch_BuildingEnabled" data-buildingsid="{{buildings_item.id}}" />
+                    <text>id:{{buildings_item.id}}, 建筑等级:[{{temp_settings.buildings[buildings_item.id].level}}]</text>
+                </view>
+                <text>星级</text>
+                <!-- 设置星级,没有的建筑默认为0星 -->
+                <slider step="1" value="{{temp_settings.buildings[buildings_item.id].star_level}}" show-value="{{true}}" max="5" bindchange="onSet_BuildingStarLevel" data-buildingsid="{{buildings_item.id}}"/>
+                <!-- 设置等级 当前只有1~2000等级的收益数据 -->
+                <input class="cinput" placeholder="输入建筑等级" type="number" bindinput="onInput_BuildingLevel" data-buildingsid="{{buildings_item.id}}"/>
+            </view>
+        </block>
+    </view>
+</view>
+
+<button class="btn_save" type="primary" bindtap="onClickSaveConfigs">
+    保存配置
+</button>

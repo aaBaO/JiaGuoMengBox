@@ -1,0 +1,14 @@
+<!-- pages/BestChoice/BestChoice.wxml -->
+<view wx:if="{{online_flag==true}}">计算在线</view>
+<view wx:else>计算离线</view>
+<switch checked="{{online_flag}}" bindchange="onSwitch_OnlineFlag"/>
+<button class="" loading="{{computing}}" disabled="{{computing}}" type="primary" bindtap="onClick_StartCalc">
+    开始计算
+</button>
+<view>
+正在计算{{current_progress}}/{{max_progress}}
+</view>
+<progress percent="{{100 * current_progress/(max_progress == 0? 1 : max_progress)}}"/>
+<view>
+耗时{{compute_cost_time}}ms
+</view>

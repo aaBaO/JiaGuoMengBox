@@ -1,0 +1,18 @@
+<!--pages/CityMission/CityMission.wxml-->
+<input class="search-bar" placeholder="搜索任务" bindinput="oninput_search" bindconfirm="onconfirm_search" focus="true"></input>
+<view class="mission-list">
+  <block wx:for="{{missions}}" wx:key="id">
+    <view id="mission_{{index}}" class="mission-item">
+      <view class="mission-name">{{item.name}}</view>
+      <text>可能的加成列表:</text>
+      <view class="mission-buff-list">
+        <block wx:for="{{item.buff_list}}" wx:for-index="buff_index" wx:for-item="buff_item">
+          <text>{{buff_index+1}}:</text>
+          <text>{{buff_item}}\n</text>
+        </block>
+      </view>
+      <view class="missoin-target">任务目标:{{item.target}}</view>
+      <view class="mission-reward">奖励:{{item.reward}}</view>
+    </view>
+  </block>
+</view>
