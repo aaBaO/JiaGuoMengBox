@@ -1,11 +1,11 @@
 // 页面滚动到指定id的组件
-const pageScrollToId = function (page, id) {
+const pageScrollToId = function (page, id, offset) {
     const query = wx.createSelectorQuery().in(page);
     query.select(id).boundingClientRect();
     query.selectViewport().scrollOffset();
     query.exec((rects) => {
         // 使页面滚动到指定item
-        const pos = rects[0].top
+        const pos = rects[0].top - offset
         wx.pageScrollTo({
             scrollTop: pos,
             duration: 300

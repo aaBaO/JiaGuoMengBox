@@ -28,9 +28,9 @@ Page({
     onLoad: function (options) {
         for(var i in FooData.buildings_list){
             var building = FooData.buildings_list[i]
-            // if(!self_configs.buildings[building.id].enabled){
-            //     continue
-            // }
+            if(!self_configs.buildings[building.id].enabled){
+                continue
+            }
             if(building.type == 1){
                 this.data.industry_buildings.push(building)
             }
@@ -254,35 +254,35 @@ Page({
         })
 
         //计算当前配置在线最大收益
-        var mostIncome = 0
-        var resultCbn = []
-        for(var ii in icbn){
-            for(var ib in bcbn){
-                for(var ir in rcbn){
-                    var perhaps_cbn = [].concat(icbn[ii], bcbn[ib], rcbn[ir])
-                    var tmpIncome = 0
-                    for(var ip in perhaps_cbn){
-                        var level = self_configs.buildings[perhaps_cbn[ip].id].level
-                        var star_level = self_configs.buildings[perhaps_cbn[ip].id].star_level
-                        tmpIncome += this.getBuildingIncome(perhaps_cbn[ip].id, star_level, level, perhaps_cbn)
-                    } 
-                    if(tmpIncome > mostIncome){
-                        mostIncome = tmpIncome
-                        resultCbn = perhaps_cbn
-                    }
-                }
-            }
-        } 
-        for(var ir in resultCbn){
-            var item = resultCbn[ir]
-            var star_level = self_configs.buildings[item.id].star_level
-            var level = self_configs.buildings[item.id].level
-            item.income = utils.numberFormat(this.getBuildingIncome(item.id, star_level, level, resultCbn)) 
-            //升级消耗比(ratio of income increase to upgrade cost)
-            item.ric = this.getBuildingRICArray(10, item.id, star_level, level, resultCbn)
-        }
-        console.log(resultCbn)
-        console.log(utils.numberFormat(mostIncome))
+        // var mostIncome = 0
+        // var resultCbn = []
+        // for(var ii in icbn){
+        //     for(var ib in bcbn){
+        //         for(var ir in rcbn){
+        //             var perhaps_cbn = [].concat(icbn[ii], bcbn[ib], rcbn[ir])
+        //             var tmpIncome = 0
+        //             for(var ip in perhaps_cbn){
+        //                 var level = self_configs.buildings[perhaps_cbn[ip].id].level
+        //                 var star_level = self_configs.buildings[perhaps_cbn[ip].id].star_level
+        //                 tmpIncome += this.getBuildingIncome(perhaps_cbn[ip].id, star_level, level, perhaps_cbn)
+        //             } 
+        //             if(tmpIncome > mostIncome){
+        //                 mostIncome = tmpIncome
+        //                 resultCbn = perhaps_cbn
+        //             }
+        //         }
+        //     }
+        // } 
+        // for(var ir in resultCbn){
+        //     var item = resultCbn[ir]
+        //     var star_level = self_configs.buildings[item.id].star_level
+        //     var level = self_configs.buildings[item.id].level
+        //     item.income = utils.numberFormat(this.getBuildingIncome(item.id, star_level, level, resultCbn)) 
+        //     //升级消耗比(ratio of income increase to upgrade cost)
+        //     item.ric = this.getBuildingRICArray(10, item.id, star_level, level, resultCbn)
+        // }
+        // console.log(resultCbn)
+        // console.log(utils.numberFormat(mostIncome))
         console.log("finish")
         this.setData({
             computing: false,

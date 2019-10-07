@@ -7,7 +7,7 @@
             <view class="policy-enhance" wx:for="{{policy_item.enhance_value}}" wx:for-index="policy_enhance_level" wx:for-item="policy_enhance_value" 
             wx:key="*this"
             wx:if="{{policy_enhance_level > 0}}">
-                等级{{policy_enhance_level}}:{{buff_type[policy_item.buff_type].display_name}}[{{policy_enhance_value}}] 
+                等级{{policy_enhance_level}}:{{buff_type[policy_item.buff_type].display_name}}[{{policy_enhance_value}}%] 
             </view>
         </view>
     </block>

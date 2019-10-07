@@ -2,15 +2,19 @@
 
 /* 搜索框 */
 .search-bar{
-  width: 100%;
   position: fixed;
-  z-index: 9999;
+  top: 0;
+  width: 100%;
   background: white;
+  z-index: 9999;
+  height: 30px;
+  border: 1px;
+  border-style: solid;
 }
 
 .mission-list{
   position: relative;
-  padding-top: 1em; 
+  margin-top: 40px; 
 }
 
 .mission-item{
@@ -18,13 +22,29 @@
   border: 1px;
   border-radius: 5px;
   border-style: solid;
+  padding: 0.2em;
 }
 
-.mission-name{
+.mission-stage{
   font-size: 24px;
   font-weight: bold;
 }
 
 .mission-buff-item{
+  font-size: 15px;
   word-wrap: normal;
+}
+
+.mission-buff-item#even{
+    background: gray;
+}
+.mission-buff-item-text#even{
+    color: white;
+}
+
+.mission-buff-item#odd{
+    background: white;
+}
+.mission-buff-item-text#odd{
+    color: black;
 }
