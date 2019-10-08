@@ -254,6 +254,9 @@ Page({
         })
 
         //计算当前配置在线最大收益
+        //计算所有建筑的基本收益
+        //获得所有类型的buff加成，政策（活动buff，家国之光），相册，城市任务
+        //遍历所有组合
         // var mostIncome = 0
         // var resultCbn = []
         // for(var ii in icbn){
