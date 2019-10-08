@@ -8,8 +8,26 @@
   background: white;
   z-index: 9999;
   height: 30px;
-  border: 1px;
-  border-style: solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.cinput{
+    border: black;
+    border-style: solid;
+    border-width: 1px;
+    margin:0.1em;
+    border-radius: 10px;
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+    width: 80%;
+}
+
+.cbtn{
+    width: 20%;
+    margin: 2px;
+    line-height: 30px;
 }
 
 .mission-list{

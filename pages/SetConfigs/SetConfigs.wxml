@@ -16,9 +16,9 @@
 <view>
     <block wx:for="{{policy_list}}" wx:key="*this" wx:for-index="policy_stage_index" wx:for-item="policy_stage_item">
         <text class="third-title">政策阶段:[{{policy_stage_index+1}}]</text>
-        <view wx:for="{{policy_stage_item}}" wx:key="id" wx:for-index="policy_index" wx:for-item="policy_item">
+        <view class="policy-container" wx:for="{{policy_stage_item}}" wx:key="id" wx:for-index="policy_index" wx:for-item="policy_item">
             <text class="policy-name">{{policy_item.display_name}}</text>
-            <slider step="1" value="{{temp_settings.policies[policy_item.id].level}}" show-value="{{true}}" max="5" bindchange="onSet_PolicyLevel" data-policyid="{{policy_item.id}}"/>
+            <slider class="policy-slider" step="1" value="{{temp_settings.policies[policy_item.id].level}}" show-value="{{true}}" max="5" bindchange="onSet_PolicyLevel" data-policyid="{{policy_item.id}}"/>
         </view>
     </block>
 </view>
@@ -55,54 +55,75 @@
     <!-- 配置工业建筑 -->
     <view class="buildings_setting" id="industry">
         <block wx:for="{{buildings_list}}" wx:for-index="buildings_index" wx:for-item="buildings_item" wx:key="id" wx:if="{{buildings_item.type==1}}">
-            <view class="buildings_setting_item" id="industry_building_{{buildings_index}}">
+            <view class="buildings_setting building" id="industry_building_{{buildings_index}}">
                 <text class="third-title">{{buildings_item.display_name}}</text>
                 <view>
                     <text>计算开关</text>
                     <switch checked="{{temp_settings.buildings[buildings_item.id].enabled}}" bindchange="onSwitch_BuildingEnabled" data-buildingsid="{{buildings_item.id}}" />
-                    <text>id:{{buildings_item.id}}, 建筑等级:[{{temp_settings.buildings[buildings_item.id].level}}]</text>
                 </view>
-                <text>星级</text>
-                <!-- 设置星级,没有的建筑默认为0星 -->
-                <slider step="1" value="{{temp_settings.buildings[buildings_item.id].star_level}}" show-value="{{true}}" max="5" bindchange="onSet_BuildingStarLevel" data-buildingsid="{{buildings_item.id}}"/>
-                <!-- 设置等级 当前只有1~2000等级的收益数据 -->
-                <input class="cinput" placeholder="输入建筑等级" type="number" bindinput="onInput_BuildingLevel" data-buildingsid="{{buildings_item.id}}"/>
+
+                <view class="building starsetting">
+                    <text class="starsetting startext">星级</text>
+                    <!-- 设置星级,没有的建筑默认为0星 -->
+                    <slider class="starsetting starslider" step="1" value="{{temp_settings.buildings[buildings_item.id].star_level}}" 
+                        show-value="{{true}}" max="5" bindchange="onSet_BuildingStarLevel" data-buildingsid="{{buildings_item.id}}"/>
+                </view>
+
+                <view class="building levelsetting">
+                    <text class="levelsetting text">建筑等级:[{{temp_settings.buildings[buildings_item.id].level}}]</text>
+                    <!-- 设置等级 当前只有1~2000等级的收益数据 -->
+                    <input class="levelsetting cinput" placeholder="输入建筑等级" type="number" bindinput="onInput_BuildingLevel" data-buildingsid="{{buildings_item.id}}"/>
+                </view>
             </view>
         </block>
     </view>
     <!-- 配置商业建筑 -->
     <view class="buildings_setting" id="business">
         <block wx:for="{{buildings_list}}" wx:for-index="buildings_index" wx:for-item="buildings_item" wx:key="id" wx:if="{{buildings_item.type==2}}">
-            <view class="buildings_setting_item" id="business_building_{{buildings_index}}">
+            <view class="buildings_setting building" id="industry_building_{{buildings_index}}">
                 <text class="third-title">{{buildings_item.display_name}}</text>
                 <view>
                     <text>计算开关</text>
                     <switch checked="{{temp_settings.buildings[buildings_item.id].enabled}}" bindchange="onSwitch_BuildingEnabled" data-buildingsid="{{buildings_item.id}}" />
-                    <text>id:{{buildings_item.id}}, 建筑等级:[{{temp_settings.buildings[buildings_item.id].level}}]</text>
                 </view>
-                <text>星级</text>
-                <!-- 设置星级,没有的建筑默认为0星 -->
-                <slider step="1" value="{{temp_settings.buildings[buildings_item.id].star_level}}" show-value="{{true}}" max="5" bindchange="onSet_BuildingStarLevel" data-buildingsid="{{buildings_item.id}}"/>
-                <!-- 设置等级 当前只有1~2000等级的收益数据 -->
-                <input class="cinput" placeholder="输入建筑等级" type="number" bindinput="onInput_BuildingLevel" data-buildingsid="{{buildings_item.id}}"/>
+
+                <view class="building starsetting">
+                    <text class="starsetting startext">星级</text>
+                    <!-- 设置星级,没有的建筑默认为0星 -->
+                    <slider class="starsetting starslider" step="1" value="{{temp_settings.buildings[buildings_item.id].star_level}}" 
+                        show-value="{{true}}" max="5" bindchange="onSet_BuildingStarLevel" data-buildingsid="{{buildings_item.id}}"/>
+                </view>
+
+                <view class="building levelsetting">
+                    <text class="levelsetting text">建筑等级:[{{temp_settings.buildings[buildings_item.id].level}}]</text>
+                    <!-- 设置等级 当前只有1~2000等级的收益数据 -->
+                    <input class="levelsetting cinput" placeholder="输入建筑等级" type="number" bindinput="onInput_BuildingLevel" data-buildingsid="{{buildings_item.id}}"/>
+                </view>
             </view>
         </block>
     </view>
     <!-- 配置住宅建筑 -->
     <view class="buildings_setting" id="residence">
         <block wx:for="{{buildings_list}}" wx:for-index="buildings_index" wx:for-item="buildings_item" wx:key="id" wx:if="{{buildings_item.type==3}}">
-            <view class="buildings_setting_item" id="residence_building_{{buildings_index}}">
+            <view class="buildings_setting building" id="industry_building_{{buildings_index}}">
                 <text class="third-title">{{buildings_item.display_name}}</text>
                 <view>
                     <text>计算开关</text>
                     <switch checked="{{temp_settings.buildings[buildings_item.id].enabled}}" bindchange="onSwitch_BuildingEnabled" data-buildingsid="{{buildings_item.id}}" />
-                    <text>id:{{buildings_item.id}}, 建筑等级:[{{temp_settings.buildings[buildings_item.id].level}}]</text>
                 </view>
-                <text>星级</text>
-                <!-- 设置星级,没有的建筑默认为0星 -->
-                <slider step="1" value="{{temp_settings.buildings[buildings_item.id].star_level}}" show-value="{{true}}" max="5" bindchange="onSet_BuildingStarLevel" data-buildingsid="{{buildings_item.id}}"/>
-                <!-- 设置等级 当前只有1~2000等级的收益数据 -->
-                <input class="cinput" placeholder="输入建筑等级" type="number" bindinput="onInput_BuildingLevel" data-buildingsid="{{buildings_item.id}}"/>
+
+                <view class="building starsetting">
+                    <text class="starsetting startext">星级</text>
+                    <!-- 设置星级,没有的建筑默认为0星 -->
+                    <slider class="starsetting starslider" step="1" value="{{temp_settings.buildings[buildings_item.id].star_level}}" 
+                        show-value="{{true}}" max="5" bindchange="onSet_BuildingStarLevel" data-buildingsid="{{buildings_item.id}}"/>
+                </view>
+
+                <view class="building levelsetting">
+                    <text class="levelsetting text">建筑等级:[{{temp_settings.buildings[buildings_item.id].level}}]</text>
+                    <!-- 设置等级 当前只有1~2000等级的收益数据 -->
+                    <input class="levelsetting cinput" placeholder="输入建筑等级" type="number" bindinput="onInput_BuildingLevel" data-buildingsid="{{buildings_item.id}}"/>
+                </view>
             </view>
         </block>
     </view>

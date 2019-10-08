@@ -1,5 +1,10 @@
 <!-- pages/CityMission/CityMission.wxml -->
-<input class="search-bar" placeholder="输入阶段跳转" type="number" bindinput="oninput_search" bindconfirm="onconfirm_search" focus="true"></input>
+<view class="search-bar">
+    <input class="cinput" placeholder="输入阶段数字跳转" type="number" bindinput="oninput_search" focus="true"></input>
+    <button class="cbtn" type="primary" bindtap="onconfirm_search">
+        Go
+    </button>
+</view>
 <view class="mission-list">
     <block wx:for="{{missions}}" wx:key="stage" wx:if="{{index>0}}">
         <view id="mission_{{index}}" class="mission-item">

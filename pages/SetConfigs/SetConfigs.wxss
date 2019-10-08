@@ -15,8 +15,21 @@
 
 }
 
-.policy-name{
+.policy-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
 
+.policy-name{
+    margin: 10px;
+    width: 50%;
+    text-align: center;
+}
+
+.policy-slider{
+    width: 50%;
 }
 
 .cinput{
@@ -67,4 +80,31 @@
 }
 .buildings_setting#residence{
     border-color: red
+}
+
+.buildings_setting .building{
+    display: flex;
+    flex-direction: column;
+}
+
+.building .starsetting{
+    flex-direction: row;
+}
+
+.starsetting .startext{
+    width: 20%;
+    text-align: center;
+    align-self: center;
+}
+.starsetting .starslider{
+    width: 90%;
+}
+
+.building .levelsetting{
+    flex-direction: row;
+}
+
+.levelsetting .text{
+    width: 60%;
+    align-self: center;
 }
