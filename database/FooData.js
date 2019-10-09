@@ -1,11 +1,11 @@
 const buff_type = [
-    { "id": 0, "display_name": "所有建筑的收入增加", "affect_building":[1, 2, 3]},
-    { "id": 1, "display_name": "供货的奖励增加", "affect_building":[] },
-    { "id": 2, "display_name": "在线时所有建筑收入增加", "affect_building":[1, 2, 3] },
-    { "id": 3, "display_name": "离线时所有建筑收入增加", "affect_building":[1, 2, 3] },
-    { "id": 4, "display_name": "工业建筑的收入增加", "affect_building":[1] },
-    { "id": 5, "display_name": "商业建筑的收入增加", "affect_building":[2] },
-    { "id": 6, "display_name": "住宅建筑的收入增加", "affect_building":[3] }
+    { "id": 0, "display_name": "所有建筑的收入增加"},
+    { "id": 1, "display_name": "供货的奖励增加"},
+    { "id": 2, "display_name": "在线时所有建筑收入增加"},
+    { "id": 3, "display_name": "离线时所有建筑收入增加"},
+    { "id": 4, "display_name": "工业建筑的收入增加"},
+    { "id": 5, "display_name": "商业建筑的收入增加"},
+    { "id": 6, "display_name": "住宅建筑的收入增加"}
 ]
 
 const policy_costs = [
@@ -93,17 +93,20 @@ const building_type = [
     {
         "type": 1,
         "name": "industry",
-        "display_name": "工业"
+        "display_name": "工业",
+        "affect_buffs":[0, 2, 3, 4],
     },
     {
         "type": 2,
         "name": "business",
-        "display_name": "商业"
+        "display_name": "商业",
+        "affect_buffs":[0, 2, 3, 5],
     },
     {
         "type": 3,
         "name": "residence",
-        "display_name": "住宅"
+        "display_name": "住宅",
+        "affect_buffs":[0, 2, 3, 6],
     }
 ]
 
