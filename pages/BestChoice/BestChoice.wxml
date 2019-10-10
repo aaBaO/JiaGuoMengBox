@@ -5,11 +5,8 @@
 <button class="" loading="{{computing}}" disabled="{{computing}}" type="primary" bindtap="onClick_StartCalc">
     开始计算
 </button>
-<!-- <view class="progress-bar" hidden="{{!computing}}"> -->
-<view class="progress-bar">
+<view class="progress-bar" hidden="{{!computing}}">
     <text >{{current_count}}/{{max_count}}</text>
     <progress percent="{{100*current_count/max_count}}" stroke-width="10"/>
 </view>
-<view>
-耗时{{compute_cost_time}}ms
-</view>
+<text> 总耗时{{compute_cost_time}}ms </text>

@@ -6,6 +6,7 @@
     "pages/PolicyPreview/PolicyPreview",
     "pages/SetConfigs/SetConfigs"
   ],
+  "workers":"workers",
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
