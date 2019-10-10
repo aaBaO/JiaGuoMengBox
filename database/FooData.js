@@ -137,12 +137,6 @@ const buildings_list = [
                 "building_id": 203,
                 "value": [0, 100, 200, 300, 400, 500]
             }
-        ],
-        "buff_type": [
-            {
-                "bufftype": 1,
-                "value": [0, 100, 200, 300, 400, 500]
-            }
         ]
     },
     {
@@ -156,12 +150,6 @@ const buildings_list = [
                 "building_id": 205,
                 "value": [0, 100, 200, 300, 400, 500]
             }
-        ],
-        "buff_type": [
-            {
-                "bufftype": 1,
-                "value": [0, 100, 200, 300, 400, 500]
-            }
         ]
     },
     {
@@ -173,7 +161,7 @@ const buildings_list = [
         "buff_type": [
             {
                 "bufftype": 3,
-                "value": [0, 100, 200, 300, 400, 500]
+                "value": [0, 10, 15, 20, 25, 30]
             }
         ]
     },
@@ -186,7 +174,7 @@ const buildings_list = [
         "buff_type": [
             {
                 "bufftype": 2,
-                "value": [0, 100, 200, 300, 400, 500]
+                "value": [0, 20, 50, 80, 110, 140]
             }
         ]
     },
@@ -205,7 +193,7 @@ const buildings_list = [
         "buff_type": [
             {
                 "bufftype": 4,
-                "value": [0, 100, 200, 300, 400, 500]
+                "value": [0, 15, 30, 45, 60, 75]
             }
         ]
     },
@@ -224,7 +212,7 @@ const buildings_list = [
         "buff_type": [
             {
                 "bufftype": 5,
-                "value": [0, 100, 200, 300, 400, 500]
+                "value": [0, 15, 30, 45, 60, 75]
             }
         ]
     },
@@ -241,7 +229,7 @@ const buildings_list = [
             },
             {
                 "building_id": 108,
-                "value": [0, 100, 200, 300, 400, 500]
+                "value": [0, 50, 100, 150, 200, 250]
             }
         ]
     },
@@ -260,7 +248,7 @@ const buildings_list = [
         "buff_type": [
             {
                 "bufftype": 0,
-                "value": [0, 100, 200, 300, 400, 500]
+                "value": [0, 10, 20, 30, 40, 50]
             }
         ]
     },
@@ -279,7 +267,7 @@ const buildings_list = [
         "buff_type": [
             {
                 "bufftype": 3,
-                "value": [0, 100, 200, 300, 400, 500]
+                "value": [0, 10, 20, 30, 40, 50]
             }
         ]
     },
@@ -399,7 +387,7 @@ const buildings_list = [
         "buff_type": [
             {
                 "bufftype": 2,
-                "value": [0, 100, 200, 300, 400, 500]
+                "value": [0, 20, 40, 60, 80, 100]
             }
         ]
     },
@@ -412,13 +400,13 @@ const buildings_list = [
         "benefit_list": [
             {
                 "building_id": 109,
-                "value": [0, 100, 200, 300, 400, 500]
+                "value": [0, 50, 100, 150, 200, 250]
             }
         ],
         "buff_type": [
             {
                 "bufftype": 3,
-                "value": [0, 100, 200, 300, 400, 500]
+                "value": [0, 100, 20, 30, 40, 50]
             }
         ]
     },
@@ -431,11 +419,11 @@ const buildings_list = [
         "buff_type": [
             {
                 "bufftype": 3,
-                "value": [0, 100, 200, 300, 400, 500]
+                "value": [0, 10, 20, 30, 40, 50]
             },
             {
                 "bufftype": 0,
-                "value": [0, 100, 200, 300, 400, 500]
+                "value": [0, 5, 10, 15, 20, 25]
             }
         ]
     },
@@ -487,7 +475,7 @@ const buildings_list = [
         "buff_type": [
             {
                 "bufftype": 6,
-                "value": [0, 100, 200, 300, 400, 500]
+                "value": [0, 20, 40, 60, 80, 100]
             }
         ]
     },
@@ -500,7 +488,7 @@ const buildings_list = [
         "buff_type": [
             {
                 "bufftype": 1,
-                "value": [0, 100, 200, 300, 400, 500]
+                "value": [0, 15, 30, 45, 60, 70]
             }
         ]
     },
@@ -513,11 +501,11 @@ const buildings_list = [
         "buff_type": [
             {
                 "bufftype": 0,
-                "value": [0, 100, 200, 300, 400, 500]
+                "value": [0, 20, 40, 600, 80, 100]
             },
             {
                 "bufftype": 4,
-                "value": [0, 100, 200, 300, 400, 500]
+                "value": [0, 15, 30, 45, 60, 75]
             }
         ]
     },
@@ -549,11 +537,11 @@ const buildings_list = [
         "buff_type": [
             {
                 "bufftype": 2,
-                "value": [0, 100, 200, 300, 400, 500]
+                "value": [0, 20, 40, 60, 800, 100]
             },
             {
                 "bufftype": 6,
-                "value": [0, 100, 200, 300, 400, 500]
+                "value": [0, 15, 30, 45, 60, 75]
             }
         ]
     },
@@ -572,7 +560,7 @@ const buildings_list = [
         "buff_type": [
             {
                 "bufftype": 2,
-                "value": [0, 100, 200, 300, 400, 500]
+                "value": [0, 20, 40, 60, 80, 100]
             }
         ]
     },
@@ -585,11 +573,11 @@ const buildings_list = [
         "buff_type": [
             {
                 "bufftype": 1,
-                "value": [0, 100, 200, 300, 400, 500]
+                "value": [0, 10, 20, 30, 40, 50]
             },
             {
                 "bufftype": 3,
-                "value": [0, 100, 200, 300, 400, 500]
+                "value": [0, 10, 20, 30, 40, 50]
             }
         ]
     }

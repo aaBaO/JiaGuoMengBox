@@ -262,5 +262,11 @@ Page({
         //保存建筑设置
         app.globalData.self_configs.buildings = this.data.temp_settings.buildings;
         wx.setStorageSync('self_configs', app.globalData.self_configs);
+
+        wx.showToast({
+            title:"保存成功",
+            icon:"success",
+            duration:1500,
+        })
     },
 })

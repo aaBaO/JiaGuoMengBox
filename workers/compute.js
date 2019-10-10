@@ -5,7 +5,7 @@ var FooData, self_configs = 'undefined'
 var industry_buildings, business_buildings, residence_buildings
 var allBaseIncome, allPolicyBuff
 //默认过滤离线buff
-const filter_buff_type = 3
+var filter_buff_type = 3
 var online_flag = 1
 var current_count = 0
 var max_count = 0
@@ -65,10 +65,11 @@ const getAllBuffInCombination = function (combination) {
             for (var index in building.buff_type) {
                 const buff_type = building.buff_type[index].bufftype
                 const star_level = self_configs.buildings[building.id].star_level
-                result[buff_type] += building.buff_type[index].value[star_level]
+                result[buff_type] = (result[buff_type] || 0) + building.buff_type[index].value[star_level]
             }
         }
     }
+    if (Debug) console.log("当前组合中的buff:",result)
     return result
 }
 
@@ -80,19 +81,24 @@ const getBuildingBuff = function (building, combination, all_buff) {
         if (test.benefit_list) {
             for (var j in test.benefit_list) {
                 if (test.benefit_list[j].building_id == building.id) {
-                    var offset = self_configs.buildings[building.id].star_level
+                    var offset = self_configs.buildings[test.id].star_level
                     result += test.benefit_list[j].value[offset]
                 }
             }
         }
     }
+    console.log("建筑与阵容间建筑加成:",building, result)
 
-    for (var buff_type in building.affect_buffs) {
+    const building_type = FooData.building_type[building.type - 1]
+    // console.log("受哪些buff加成:", building_type.affect_buffs)
+    for (var i in building_type.affect_buffs) {
+        var buff_type = building_type.affect_buffs[i]
         if (buff_type == filter_buff_type) {
             continue;
         }
-        result += all_buff[buff_type]
+        result += all_buff[buff_type] || 0
     }
+    // console.log("阵容间buff加成:",building, result)
     return result * 0.01
 }
 
@@ -113,17 +119,20 @@ const getAllPolicyBuff = function () {
     for (var buff_type in self_configs.extra_buff) {
         result[buff_type] += self_configs.extra_buff[buff_type].value
     }
+    if (Debug) console.log("所有政策加成:",result)
     return result
 }
 
 const getPolicyBuff = function (building) {
     var result = 100
 
-    for (var buff_type in building.affect_buffs) {
+    const building_type = FooData.building_type[building.type-1]
+    for (var i in building_type.affect_buffs) {
+        var buff_type = building_type.affect_buffs[i]
         if (buff_type == filter_buff_type) {
             continue;
         }
-        result += this.allPolicyBuff[buff_type]
+        result += allPolicyBuff[buff_type] || 0
     }
 
     return result * 0.01
@@ -132,25 +141,29 @@ const getPolicyBuff = function (building) {
 const getAlbumBuff = function (building) {
     var result = 100
 
-    for (var buff_type in building.affect_buffs) {
+    const building_type = FooData.building_type[building.type-1]
+    for (var i in building_type.affect_buffs) {
+        var buff_type = building_type.affect_buffs[i]
         if (buff_type == filter_buff_type) {
             continue;
         }
-        result += self_configs.albums[buff_type].value
+        result += self_configs.albums[buff_type].value || 0
     }
 
     return result * 0.01
 }
 
-const getCityMissionBuff = function (building) {
+const getCityMissionBuff = function (building, ) {
     var result = 100
     var city_building_enhance = self_configs.city_missions.building
 
-    for (var buff_type in building.affect_buffs) {
+    const building_type = FooData.building_type[building.type-1]
+    for (var i in building_type.affect_buffs) {
+        var buff_type = building_type.affect_buffs[i]
         if (buff_type == filter_buff_type) {
             continue;
         }
-        result += self_configs.city_missions.buff[buff_type].value
+        result += self_configs.city_missions.buff[buff_type].value || 0
     }
 
     for (var i in city_building_enhance) {
@@ -158,6 +171,7 @@ const getCityMissionBuff = function (building) {
             result += city_building_enhance[i].value
         }
     }
+
     return result * 0.01
 }
 
@@ -170,7 +184,7 @@ const getOnlineOfflineFactor = function (online) {
 const getBuildingIncome = function (building_data, building_level, combination, all_buff) {
     return getOnlineOfflineFactor(online_flag)
         * allBaseIncome[building_data.id]
-        * (FooData.level_income[building_level] * 0.01)
+        * FooData.level_income[building_level]
         * getBuildingBuff(building_data, combination, all_buff)
         * getPolicyBuff(building_data)
         * getAlbumBuff(building_data)
@@ -208,7 +222,6 @@ const getBuildingList = function () {
     industry_buildings = []
     business_buildings = []
     residence_buildings = []
-    if (Debug) console.log(FooData)
     for (var i in FooData.buildings_list) {
         var building = FooData.buildings_list[i]
         if (!self_configs.buildings[building.id].enabled) {
@@ -230,8 +243,8 @@ const getBuildingList = function () {
 //     online_flag
 // }
 const getBestCombination = function (data) {
-    if (Debug) console.log(FooData, self_configs)
     online_flag = data.online_flag
+    filter_buff_type = online_flag? 3 : 2
     var icbn = utils.getCombinations(industry_buildings, 3)
     var bcbn = utils.getCombinations(business_buildings, 3)
     var rcbn = utils.getCombinations(residence_buildings, 3)
@@ -263,7 +276,8 @@ const getBestCombination = function (data) {
                 var tmpIncome = 0
                 for (var ip in perhaps_cbn) {
                     var level = self_configs.buildings[perhaps_cbn[ip].id].level
-                    tmpIncome += getBuildingIncome(perhaps_cbn[ip], level, perhaps_cbn, all_buff_in_cbn)
+                    var income = getBuildingIncome(perhaps_cbn[ip], level, perhaps_cbn, all_buff_in_cbn)
+                    tmpIncome += income 
                 }
                 if (tmpIncome > mostIncome) {
                     mostIncome = tmpIncome
