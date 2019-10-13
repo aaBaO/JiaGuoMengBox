@@ -1,5 +1,5 @@
 const utils = require('./utils.js')
-const Debug = true
+const Debug = false
 
 var FooData, self_configs = 'undefined'
 var industry_buildings, business_buildings, residence_buildings
@@ -17,6 +17,8 @@ worker.onMessage(function (res) {
         getBestCombination(res.data)
     } else if (res.msg === "setData") {
         setData(res.data)
+    } else if(res.msg === "getRICArray"){
+        getRICArray(res.data)
     }
 })
 
@@ -87,7 +89,7 @@ const getBuildingBuff = function (building, combination, all_buff) {
             }
         }
     }
-    console.log("建筑与阵容间建筑加成:",building, result)
+    // console.log("建筑与阵容间建筑加成:",building, result)
 
     const building_type = FooData.building_type[building.type - 1]
     // console.log("受哪些buff加成:", building_type.affect_buffs)
@@ -193,14 +195,15 @@ const getBuildingIncome = function (building_data, building_level, combination, 
 
 //获取单个建筑一定范围内的升级消耗比例
 //升级消耗比(ratio of income increase to upgrade cost)
-const getBuildingRICArray = function (range, building_id, building_star_level, building_level, combination) {
+const getBuildingRICArray = function (range, building_data, building_level, combination) {
     var result = []
-    var rare = getBuildingData(building_id).rare
+    var rare = building_data.rare
+    var all_buff = getAllBuffInCombination(combination)
     for (var i = 0; i < range; i++) {
-        var ia = this.getBuildingIncome(building_id, building_star_level, building_level + i + 1, combination)
-        var ib = this.getBuildingIncome(building_id, building_star_level, building_level + i, combination)
-        var cost = FooData.getUpgradeCost(building_id, rare)
-        result.push((ia - ib) / cost)
+        var ia = getBuildingIncome(building_data, building_level + i + 1, combination, all_buff)
+        var ib = getBuildingIncome(building_data, building_level + i, combination, all_buff)
+        var cost = FooData.level_cost[rare][building_level + i + 1]
+        result.push((Math.log((ia - ib) / cost)).toFixed(3))
     }
     return result
 }
@@ -266,7 +269,7 @@ const getBestCombination = function (data) {
     var resultCbn = []
     //发送进度的计数
     var sendProgressIndex = 0
-    const sendProgressInterval = 100
+    const sendProgressInterval = 1000
     for (var ii in icbn) {
         for (var ib in bcbn) {
             for (var ir in rcbn) {
@@ -301,7 +304,9 @@ const getBestCombination = function (data) {
 
     var resultdata = {
         // 最大收入/秒
-        mostIncome: utils.numberFormat(mostIncome),
+        mostIncome: mostIncome,
+        display_mostIncome_s: utils.numberFormat(mostIncome),
+        display_mostIncome_h: utils.numberFormat(mostIncome * 3600),
         // 最佳组合
         resultCbn: resultCbn,
         // 计算消耗时间
@@ -312,6 +317,13 @@ const getBestCombination = function (data) {
         allPolicyBuff: allPolicyBuff,
     }
 
+    var all_buff_in_cbn = getAllBuffInCombination(resultCbn)
+    for (var i in resultCbn) {
+        var level = self_configs.buildings[resultCbn[i].id].level
+        var income = getBuildingIncome(resultCbn[i], level, resultCbn, all_buff_in_cbn)
+        resultCbn[i].income = income
+        resultCbn[i].display_income = utils.numberFormat(income)
+    }
     if (Debug) console.log(resultdata)
     // return result
     worker.postMessage({
@@ -320,14 +332,19 @@ const getBestCombination = function (data) {
     })
 }
 
+// data:{
+//     index,
+//     resultCbn,
+//     range,
+// }
+const getRICArray = function (data) {
+    var item = data.resultCbn[data.index]
+    var level = self_configs.buildings[item.id].level
+    //升级消耗比(ratio of income increase to upgrade cost)
+    item.ric = getBuildingRICArray(10, item, level, data.resultCbn)
 
-const getRic = function (data) {
-    for (var ir in resultCbn) {
-        var item = resultCbn[ir]
-        var star_level = self_configs.buildings[item.id].star_level
-        var level = self_configs.buildings[item.id].level
-        item.income = utils.numberFormat(this.getBuildingIncome(item.id, star_level, level, resultCbn))
-        //升级消耗比(ratio of income increase to upgrade cost)
-        item.ric = this.getBuildingRICArray(10, item.id, star_level, level, resultCbn)
-    }
+    worker.postMessage({
+        msg: "returnRICArray",
+        data: data.resultCbn,
+    })
 }

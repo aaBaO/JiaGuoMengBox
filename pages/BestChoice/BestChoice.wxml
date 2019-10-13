@@ -7,6 +7,32 @@
 </button>
 <view class="progress-bar" hidden="{{!computing}}">
     <text >{{current_count}}/{{max_count}}</text>
-    <progress percent="{{100*current_count/max_count}}" stroke-width="10"/>
+    <progress percent="{{100*current_count/max_count}}" stroke-width="10" duration="500"/>
 </view>
-<text> 总耗时{{compute_cost_time}}ms </text>
+<view hidden="{{!has_result}}">
+    <view>
+        总耗时{{result.cost_time}}ms
+    </view>
+    <view class="best-list">
+        <block wx:for="{{result.resultCbn}}" wx:for-index="index" wx:for-item="item" wx:key="*this">
+            <button class="building {{building_rare_wxssclass[item.rare]}}" bindtap="onClick_ResultBuilding" data-index="{{index}}">
+                <view class="building text">{{item.display_name}}</view>
+                <view class="building text">{{item.display_income}}/s</view>
+            </button>
+        </block>
+    </view>
+    <view class="">
+        每秒总收入:{{result.display_mostIncome_s}}
+    </view>
+    <view class="">
+        每小时总收入:{{result.display_mostIncome_h}}
+    </view>
+</view>
+<view class="detail-background" wx:if="{{(has_result && show_detail)}}" bindtap="onClick_CloseDetail"></view>
+<view class="detail" wx:if="{{(has_result && show_detail)}}">
+    <block wx:for="{{result.resultCbn[selected_building_index].ric}}" wx:for-index="index" wx:for-item="item" wx:key="*this">
+        <view class="ric">
+            {{(index + 1)}}:{{item}}
+        </view>
+    </block>
+</view>

@@ -13,7 +13,7 @@
 		"coverView": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.4",
+	"libVersion": "2.8.3",
 	"appid": "wx194cee65ed216e52",
 	"projectname": "JiaGuoMengBox",
 	"debugOptions": {

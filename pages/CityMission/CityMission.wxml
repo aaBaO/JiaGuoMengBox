@@ -2,7 +2,7 @@
 <view class="search-bar">
     <input class="cinput" placeholder="输入阶段数字跳转" type="number" bindinput="oninput_search" focus="true"></input>
     <button class="cbtn" type="primary" bindtap="onconfirm_search">
-        Go
+        <view>Go</view>
     </button>
 </view>
 <view class="mission-list">

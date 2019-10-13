@@ -12,13 +12,22 @@ Page({
     data: {
         // 计算离线在线标记,默认计算在线
         online_flag: true,
-        allBaseIncome: {},
-        allPolicyBuff: {},
 
         computing: false,
-        compute_cost_time: 0,
         current_count: 0,
         max_count: 0,
+        has_result:false,
+
+        //当前选中要查看的建筑
+        selected_building_index: 0,
+        show_detail: false,
+
+        result:{},
+        building_rare_wxssclass:[
+            'normal',
+            'epic',
+            'legend'
+        ],
     },
 
     compute_worker: "undefined",
@@ -39,7 +48,6 @@ Page({
     },
 
     startWorker: function (page) {
-        console.log(page.setData)
         var worker = wx.createWorker('workers/compute.js')
         if (worker) {
             worker.onMessage(function (res) {
@@ -48,11 +56,18 @@ Page({
                 if (res.msg === "returnBestCombination") {
                     page.setData({
                         computing: false,
-                        compute_cost_time: res.data.cost_time
+                        result: res.data,
+                        has_result: true,
                     })
                 } else if(res.msg === "returnComputProgress"){
                     page.data.current_count = res.data.current_count
                     page.data.max_count = res.data.max_count
+                } else if(res.msg === "returnRICArray"){
+                    console.log(res.data)
+                    page.data.result.resultCbn = res.data
+                    page.setData({
+                        result: page.data.result,
+                    })
                 }
             })
         }
@@ -74,7 +89,7 @@ Page({
             if(page.data.current_count >= page.data.max_count){
                 clearInterval(timer)
             }
-        }, 100)
+        }, 500)
     },
 
     /**
@@ -96,14 +111,12 @@ Page({
      */
     onHide: function () {
 
-        console.log("hide")
     },
 
     /**
      * Lifecycle function--Called when page unload
      */
     onUnload: function () {
-        console.log("unload")
         this.stopWorker(this.compute_worker)
     },
 
@@ -136,7 +149,6 @@ Page({
     },
 
     onClick_StartCalc: function () {
-
         this.compute_worker.postMessage({
             msg: "getBestCombination",
             data: {
@@ -147,6 +159,29 @@ Page({
 
         this.setData({
             computing: true,
+            has_result: false,
+        })
+    },
+
+    onClick_ResultBuilding:function(event){
+        this.compute_worker.postMessage({
+            msg: "getRICArray",
+            data: {
+                index: event.currentTarget.dataset.index,
+                resultCbn: this.data.result.resultCbn,
+                range:10,
+            }
+        })
+
+        this.setData({
+            selected_building_index: event.currentTarget.dataset.index,
+            show_detail: true,
+        })
+    },
+
+    onClick_CloseDetail:function(event){
+        this.setData({
+            show_detail: false,
         })
     }
 })
