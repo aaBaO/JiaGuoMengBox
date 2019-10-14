@@ -88,7 +88,7 @@
     </view>
     <!-- 配置商业建筑 -->
     <view class="buildings_setting" id="business">
-        <block wx:for="{{buildings_list}}" wx:for-index="building_index" wx:for-item="building_item" wx:key="id" wx:if="{{building_item.type==1}}">
+        <block wx:for="{{buildings_list}}" wx:for-index="building_index" wx:for-item="building_item" wx:key="id" wx:if="{{building_item.type==2}}">
             <view class="buildings_setting building" id="business_building_{{building_index}}">
                 <text class="{{building_rare_wxssclass[building_item.rare]}}">{{building_item.display_name}}</text>
                 <view>
@@ -113,7 +113,7 @@
     </view>
     <!-- 配置住宅建筑 -->
     <view class="buildings_setting" id="residence">
-        <block wx:for="{{buildings_list}}" wx:for-index="building_index" wx:for-item="building_item" wx:key="id" wx:if="{{building_item.type==1}}">
+        <block wx:for="{{buildings_list}}" wx:for-index="building_index" wx:for-item="building_item" wx:key="id" wx:if="{{building_item.type==3}}">
             <view class="buildings_setting building" id="residence_building_{{building_index}}">
                 <text class="{{building_rare_wxssclass[building_item.rare]}}">{{building_item.display_name}}</text>
                 <view>
