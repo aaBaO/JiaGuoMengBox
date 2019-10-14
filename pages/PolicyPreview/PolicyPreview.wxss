@@ -6,23 +6,23 @@
 
 .policy-stage{
     margin: 10px;
+    padding: 4px;
     border-radius: 10px;
-    border-width: 1px;
-    border-style: solid;
+    border: 2px solid black;
 }
 
 .policy-border{
     margin: 0.2em;
-    border-width: 1px;
-    border-radius: 5px;
-    border-style: solid;
+    border-left: 4px solid lightgray;
 }
 
 .policy-name{
     font-size: 20px;
+    padding: 2px;
 }
 
 .policy-enhance{
+    padding: 2px;
     font-size: 15px;
     word-wrap: normal;
 }

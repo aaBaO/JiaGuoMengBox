@@ -1,8 +1,8 @@
-<!--index.wxml-->
+<!-- index.wxml -->
+<view class="title">家国梦小助手</view>
 <view class="navi-button-container">
-  <button bindtap="onclick_set_configs" class="navi-button">初始化设置</button>
-  <button bindtap="onclick_best_choice" class="navi-button">计算最优选择</button>
-  <button bindtap="onclick_city_mission" class="navi-button">城市任务</button>
-  <button bindtap="onclick_policy_preview" class="navi-button">政策预览</button>
-  <button bindtap="onclick_album" class="navi-button">相册预览</button>
+    <button bindtap="onclick_set_configs" class="navi-button">初始化设置</button>
+    <button bindtap="onclick_best_choice" class="navi-button">计算最优选择</button>
+    <button bindtap="onclick_city_mission" class="navi-button">城市任务</button>
+    <button bindtap="onclick_policy_preview" class="navi-button">政策预览</button>
 </view>

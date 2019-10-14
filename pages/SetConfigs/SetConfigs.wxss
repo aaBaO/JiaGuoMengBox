@@ -1,6 +1,7 @@
 /* pages/SetConfigs/SetConfigs.wxss */
 .title{
-
+    font-size: 2em;
+    text-align: center;
 }
 
 .sub-title{
@@ -11,8 +12,10 @@
     text-indent: 2px;
 }
 
-.total-enhance-list{
-
+.box{
+    border-left: 2px solid grey;
+    margin: 0.5em;
+    padding: 2px;
 }
 
 .policy-container{
@@ -20,6 +23,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    padding: 2px;
 }
 
 .policy-name{
@@ -44,17 +48,12 @@
 
 .buff_for_building{
     margin:0.1em;
-    background-color: lightgray;
+    padding: 4px;
 }
 
-.buff_for_building#id_0{
-    border-style:solid;
-}
-.buff_for_building#id_1{
-    border-style:solid;
-}
-.buff_for_building#id_2{
-    border-style:solid;
+.pick-selected{
+    border-left: 4px solid peru;
+    padding: 4px;
 }
 
 .cpicker{
@@ -62,24 +61,34 @@
     margin-bottom: 0.5em;
 }
 
-.pick-selected{
-
-}
-
 .buildings_setting{
-    margin:0.1em;
-    border: 1px solid;
-    border-radius: 5px;
+    padding: 2px;
 }
 
 .buildings_setting#industry{
-    border-color: blue;
+    border-left: 2px solid blue;
 }
 .buildings_setting#business{
-    border-color: green;
+    border-left: 2px solid green;
 }
 .buildings_setting#residence{
-    border-color: red
+    border-left: 2px solid red;
+}
+
+.normal{
+    color: white;
+    font-size: 18px;
+    background: rgb(0, 153, 255);
+}
+.epic{
+    color: white;
+    font-size: 18px;
+    background: rgb(167, 0, 201);
+}
+.legend{
+    color: white;
+    font-size: 18px;
+    background: rgb(255, 153, 0);
 }
 
 .buildings_setting .building{

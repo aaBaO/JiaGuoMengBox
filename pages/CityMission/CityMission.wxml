@@ -15,7 +15,7 @@
             <view class="mission-reward">需要贡献值:{{item.target_contruibution_value}}</view>
             <h3>可能的加成列表</h3>
             <view class="mission-buff-list">
-                <block wx:for="{{mission_buffs[item.buffs_id].perhaps_list_display}}" wx:for-index="buff_index" wx:for-item="buff_item">
+                <block wx:for="{{mission_buffs[item.buffs_id].perhaps_list_display}}" wx:for-index="buff_index" wx:for-item="buff_item" wx:key="*this">
                     <view class="mission-buff-item" id="{{buff_index%2==0?'even':'odd'}}">
                         <text class="mission-buff-item-text" id="{{buff_index%2==0?'even':'odd'}}">{{buff_item}}</text>
                     </view>

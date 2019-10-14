@@ -43,8 +43,6 @@ Page({
                 self_configs: self_configs,
             }
         })
-
-        console.log("onload")
     },
 
     startWorker: function (page) {
@@ -63,7 +61,6 @@ Page({
                     page.data.current_count = res.data.current_count
                     page.data.max_count = res.data.max_count
                 } else if(res.msg === "returnRICArray"){
-                    console.log(res.data)
                     page.data.result.resultCbn = res.data
                     page.setData({
                         result: page.data.result,

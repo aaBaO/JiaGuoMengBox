@@ -1,7 +1,9 @@
 <!-- pages/BestChoice/BestChoice.wxml -->
-<view wx:if="{{online_flag==true}}">计算在线</view>
-<view wx:else>计算离线</view>
-<switch checked="{{online_flag}}" bindchange="onSwitch_OnlineFlag"/>
+<view class="online-switch">
+    <view wx:if="{{online_flag==true}}">计算在线</view>
+    <view wx:else>计算离线</view>
+    <switch checked="{{online_flag}}" bindchange="onSwitch_OnlineFlag"/>
+</view>
 <button class="" loading="{{computing}}" disabled="{{computing}}" type="primary" bindtap="onClick_StartCalc">
     开始计算
 </button>
@@ -30,6 +32,12 @@
 </view>
 <view class="detail-background" wx:if="{{(has_result && show_detail)}}" bindtap="onClick_CloseDetail"></view>
 <view class="detail" wx:if="{{(has_result && show_detail)}}">
+    <view class="desc">
+        接下来10级的升级收益比, 值越大越好。
+    </view>
+    <view class="desc">
+        计算公式:RIC = log(等级a收入-等级b收入)/(等级b到等级a的消耗)
+    </view>
     <block wx:for="{{result.resultCbn[selected_building_index].ric}}" wx:for-index="index" wx:for-item="item" wx:key="*this">
         <view class="ric">
             {{(index + 1)}}:{{item}}

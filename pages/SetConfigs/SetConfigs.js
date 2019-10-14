@@ -31,14 +31,20 @@ Page({
                 ],
             },
             extra_buff: {},
-        }
+        },
+
+        building_rare_wxssclass:[
+            'normal',
+            'epic',
+            'legend'
+        ],
     },
 
     /**
      * Lifecycle function--Called when page load
      */
     onLoad: function (options) {
-        console.log(app.globalData.self_configs)
+        // console.log(app.globalData.self_configs)
 
         //初始化临时设置
         //家国之光，活动buff
