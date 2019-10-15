@@ -331,7 +331,7 @@ const buildings_list = [
         "income_offset": 100,
         "benefit_list": [
             {
-                "building_id": 1,
+                "building_id": 205,
                 "value": [0, 100, 200, 300, 400, 500]
             }
         ]
