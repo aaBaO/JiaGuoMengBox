@@ -135,7 +135,10 @@ Page({
      * Called when user click on the top right corner to share
      */
     onShareAppMessage: function () {
-
+        return{
+            title:"家国梦小助手",
+            path:"/pages/index/index",
+        }
     },
 
     onSwitch_OnlineFlag: function (event) {
