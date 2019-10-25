@@ -23,69 +23,69 @@ const policy_costs = [
 
 const policy_list = [
     [
-        { id:100, stage:1, display_name:"一带一路建设", buff_type:0, enhance_value:[0, 10, 25, 50, 75, 100]},
-        { id:101, stage:1, display_name:"自由贸易区建设", buff_type:5, enhance_value:[0, 30, 75, 150, 225, 300]},
+        { id:100, stage:1, display_name:"大众创业万众创新", buff_type:0, enhance_value:[0, 10, 25, 50, 75, 100]},
+        { id:101, stage:1, display_name:"产权保护", buff_type:5, enhance_value:[0, 30, 75, 150, 225, 300]},
         { id:102, stage:1, display_name:"区域协调发展", buff_type:6, enhance_value:[0, 30, 75, 150, 225, 300]},
     ],
     [
-        { id:200, stage:2, display_name:"全面深化改革", buff_type:0, enhance_value:[0, 20, 50, 100, 150, 200]},
-        { id:201, stage:2, display_name:"全面依法治国", buff_type:2, enhance_value:[0, 20, 50, 100, 150, 200]},
-        { id:202, stage:2, display_name:"科教兴国", buff_type:3, enhance_value:[0, 20, 50, 100, 150, 200]},
-        { id:203, stage:2, display_name:"创新驱动", buff_type:4, enhance_value:[0, 60, 150, 300, 450, 600]},
+        { id:200, stage:2, display_name:"创新驱动", buff_type:0, enhance_value:[0, 20, 50, 100, 150, 200]},
+        { id:201, stage:2, display_name:"物联网+", buff_type:2, enhance_value:[0, 20, 50, 100, 150, 200]},
+        { id:202, stage:2, display_name:"新一代人工智能", buff_type:3, enhance_value:[0, 20, 50, 100, 150, 200]},
+        { id:203, stage:2, display_name:"制造强国", buff_type:4, enhance_value:[0, 60, 150, 300, 450, 600]},
     ],
     [
-        { id:300, stage:3, display_name:"制造强国", buff_type:4, enhance_value:[0, 120, 300, 600, 900, 1200]},
-        { id:301, stage:3, display_name:"优化营商环境", buff_type:1, enhance_value:[0, 10, 15, 20, 25, 30]},
-        { id:302, stage:3, display_name:"减税降费", buff_type:0, enhance_value:[0, 40, 100, 200, 300, 400]},
-        { id:303, stage:3, display_name:"普惠金融", buff_type:5, enhance_value:[0, 120, 300, 600, 900, 1200]},
+        { id:300, stage:3, display_name:"双一流建设", buff_type:4, enhance_value:[0, 120, 300, 600, 900, 1200]},
+        { id:301, stage:3, display_name:"体育强国", buff_type:1, enhance_value:[0, 10, 15, 20, 25, 30]},
+        { id:302, stage:3, display_name:"科教兴国", buff_type:0, enhance_value:[0, 40, 100, 200, 300, 400]},
+        { id:303, stage:3, display_name:"健康中国", buff_type:5, enhance_value:[0, 120, 300, 600, 900, 1200]},
     ],
     [
-        { id:400, stage:4, display_name:"新型城镇化", buff_type:6, enhance_value:[0, 240, 600, 1200, 1800, 2400]},
-        { id:401, stage:4, display_name:"乡村振新", buff_type:2, enhance_value:[0, 80, 200, 400, 600, 800]},
-        { id:402, stage:4, display_name:"精准扶贫", buff_type:3, enhance_value:[0, 80, 200, 400, 600, 800]},
-        { id:403, stage:4, display_name:"新一代人工智能", buff_type:0, enhance_value:[0, 80, 200, 400, 600, 800]},
+        { id:400, stage:4, display_name:"乡村振兴", buff_type:6, enhance_value:[0, 240, 600, 1200, 1800, 2400]},
+        { id:401, stage:4, display_name:"强军兴军", buff_type:2, enhance_value:[0, 80, 200, 400, 600, 800]},
+        { id:402, stage:4, display_name:"名族团结", buff_type:3, enhance_value:[0, 80, 200, 400, 600, 800]},
+        { id:403, stage:4, display_name:"社会主义核心价值观", buff_type:0, enhance_value:[0, 80, 200, 400, 600, 800]},
     ],
     [
-        { id:500, stage:5, display_name:"蓝天保卫战", buff_type:4, enhance_value:[0, 360, 900, 1800, 2700, 3600]},
-        { id:501, stage:5, display_name:"拍蝇打虎猎狐", buff_type:3, enhance_value:[0, 120, 300, 600, 900, 1200]},
-        { id:502, stage:5, display_name:"扫黑除恶", buff_type:6, enhance_value:[0, 360, 900, 1800, 2700, 3600]},
-        { id:503, stage:5, display_name:"平安中国", buff_type:5, enhance_value:[0, 360, 900, 1800, 2700, 3600]},
-        { id:504, stage:5, display_name:"美丽中国", buff_type:0, enhance_value:[0, 120, 300, 600, 900, 1200]},
+        { id:500, stage:5, display_name:"医疗异地结算", buff_type:4, enhance_value:[0, 360, 900, 1800, 2700, 3600]},
+        { id:501, stage:5, display_name:"大病保险", buff_type:3, enhance_value:[0, 120, 300, 600, 900, 1200]},
+        { id:502, stage:5, display_name:"幼有所育", buff_type:6, enhance_value:[0, 360, 900, 1800, 2700, 3600]},
+        { id:503, stage:5, display_name:"老有所养", buff_type:5, enhance_value:[0, 360, 900, 1800, 2700, 3600]},
+        { id:504, stage:5, display_name:"全面二孩", buff_type:0, enhance_value:[0, 120, 300, 600, 900, 1200]},
     ],
     [
-        { id:600, stage:6, display_name:"互联网+", buff_type:5, enhance_value:[0, 750, 1875, 3750, 5625, 7500]},
-        { id:601, stage:6, display_name:"健康中国", buff_type:2, enhance_value:[0, 250, 625, 1250, 1875, 2500]},
-        { id:602, stage:6, display_name:"河长制", buff_type:4, enhance_value:[0, 750, 1875, 3750, 5625, 7500]},
-        { id:603, stage:6, display_name:"厕所革命", buff_type:6, enhance_value:[0, 750, 1875, 3750, 5625, 7500]},
-        { id:604, stage:6, display_name:"社会主义核心价值观", buff_type:0, enhance_value:[0, 250, 625, 1250, 1875, 2500]},
+        { id:600, stage:6, display_name:"垃圾分类", buff_type:5, enhance_value:[0, 750, 1875, 3750, 5625, 7500]},
+        { id:601, stage:6, display_name:"租购并举", buff_type:2, enhance_value:[0, 250, 625, 1250, 1875, 2500]},
+        { id:602, stage:6, display_name:"全名剑圣", buff_type:4, enhance_value:[0, 750, 1875, 3750, 5625, 7500]},
+        { id:603, stage:6, display_name:"棚户区改造", buff_type:6, enhance_value:[0, 750, 1875, 3750, 5625, 7500]},
+        { id:604, stage:6, display_name:"文化惠民", buff_type:0, enhance_value:[0, 250, 625, 1250, 1875, 2500]},
     ],
     [
-        { id:700, stage:7, display_name:"双一流建设", buff_type:2, enhance_value:[0, 750, 1875, 3750, 5625, 7500]},
-        { id:701, stage:7, display_name:"体育强国", buff_type:1, enhance_value:[0, 10, 15, 20, 25, 30]},
-        { id:702, stage:7, display_name:"民族团结", buff_type:0, enhance_value:[0, 750, 1875, 3750, 5625, 7500]},
-        { id:703, stage:7, display_name:"节约资源", buff_type:4, enhance_value:[0, 2250, 5625, 11250, 16875, 22500]},
-        { id:704, stage:7, display_name:"强军兴军", buff_type:3, enhance_value:[0, 750, 1875, 3750, 5625, 7500]},
+        { id:700, stage:7, display_name:"河长制", buff_type:2, enhance_value:[0, 750, 1875, 3750, 5625, 7500]},
+        { id:701, stage:7, display_name:"节约资源", buff_type:1, enhance_value:[0, 10, 15, 20, 25, 30]},
+        { id:702, stage:7, display_name:"美丽中国", buff_type:0, enhance_value:[0, 750, 1875, 3750, 5625, 7500]},
+        { id:703, stage:7, display_name:"蓝天保卫战", buff_type:4, enhance_value:[0, 2250, 5625, 11250, 16875, 22500]},
+        { id:704, stage:7, display_name:"厕所革命", buff_type:3, enhance_value:[0, 750, 1875, 3750, 5625, 7500]},
     ],
     [
-        { id:800, stage:8, display_name:"个税改革", buff_type:0, enhance_value:[0, 1000, 2500, 5000, 7500, 10000]},
-        { id:801, stage:8, display_name:"大众创业万众创新", buff_type:4, enhance_value:[0, 3000, 7500, 15000, 22500, 30000]},
-        { id:802, stage:8, display_name:"产权保护", buff_type:5, enhance_value:[0, 3000, 7500, 15000, 22500, 30000]},
-        { id:803, stage:8, display_name:"户籍制度改革", buff_type:6, enhance_value:[0, 3000, 7500, 15000, 22500, 30000]},
-        { id:804, stage:8, display_name:"文化惠民", buff_type:3, enhance_value:[0, 1000, 2500, 5000, 7500, 10000]},
+        { id:800, stage:8, display_name:"精准扶贫", buff_type:0, enhance_value:[0, 1000, 2500, 5000, 7500, 10000]},
+        { id:801, stage:8, display_name:"一带一路建设", buff_type:4, enhance_value:[0, 3000, 7500, 15000, 22500, 30000]},
+        { id:802, stage:8, display_name:"自由贸易区建设", buff_type:5, enhance_value:[0, 3000, 7500, 15000, 22500, 30000]},
+        { id:803, stage:8, display_name:"新型城镇化", buff_type:6, enhance_value:[0, 3000, 7500, 15000, 22500, 30000]},
+        { id:804, stage:8, display_name:"户籍改革制度", buff_type:3, enhance_value:[0, 1000, 2500, 5000, 7500, 10000]},
     ],
     [
-        { id:900, stage:9, display_name:"棚户区改造", buff_type:6, enhance_value:[0, 9000, 22500, 45000, 67500, 90000]},
-        { id:901, stage:9, display_name:"租购并举", buff_type:6, enhance_value:[0, 9000, 22500, 45000, 67500, 90000]},
-        { id:902, stage:9, display_name:"垃圾分类", buff_type:1, enhance_value:[0, 10, 15, 20, 25, 30]},
-        { id:903, stage:9, display_name:"医保异地结算", buff_type:3, enhance_value:[0, 3000, 7500, 15000, 22500, 30000]},
-        { id:904, stage:9, display_name:"大病保险", buff_type:3, enhance_value:[0, 3000, 7500, 15000, 22500, 30000]},
+        { id:900, stage:9, display_name:"减税降费", buff_type:6, enhance_value:[0, 9000, 22500, 45000, 67500, 90000]},
+        { id:901, stage:9, display_name:"区域协调发展", buff_type:6, enhance_value:[0, 9000, 22500, 45000, 67500, 90000]},
+        { id:902, stage:9, display_name:"优化营商环境", buff_type:1, enhance_value:[0, 10, 15, 20, 25, 30]},
+        { id:903, stage:9, display_name:"惠普金融", buff_type:3, enhance_value:[0, 3000, 7500, 15000, 22500, 30000]},
+        { id:904, stage:9, display_name:"全面深化改革", buff_type:3, enhance_value:[0, 3000, 7500, 15000, 22500, 30000]},
     ],
     [
-        { id:1000, stage:10, display_name:"全面二孩", buff_type:0, enhance_value:[0, 6000, 15000, 30000, 45000, 60000]},
-        { id:1001, stage:10, display_name:"幼有所育", buff_type:2, enhance_value:[0, 6000, 15000, 30000, 45000, 60000]},
-        { id:1002, stage:10, display_name:"老有所养", buff_type:2, enhance_value:[0, 6000, 15000, 30000, 45000, 60000]},
-        { id:1003, stage:10, display_name:"失信联合惩戒", buff_type:5, enhance_value:[0, 18000, 45000, 90000, 135000, 180000]},
-        { id:1004, stage:10, display_name:"全民健身", buff_type:0, enhance_value:[0, 6000, 15000, 30000, 45000, 60000]},
+        { id:1000, stage:10, display_name:"拍蝇打虎猎狐", buff_type:0, enhance_value:[0, 6000, 15000, 30000, 45000, 60000]},
+        { id:1001, stage:10, display_name:"扫黑除恶", buff_type:2, enhance_value:[0, 6000, 15000, 30000, 45000, 60000]},
+        { id:1002, stage:10, display_name:"失信联盟惩戒", buff_type:2, enhance_value:[0, 6000, 15000, 30000, 45000, 60000]},
+        { id:1003, stage:10, display_name:"平安中国", buff_type:5, enhance_value:[0, 18000, 45000, 90000, 135000, 180000]},
+        { id:1004, stage:10, display_name:"全面依法治国", buff_type:0, enhance_value:[0, 6000, 15000, 30000, 45000, 60000]},
     ],
 ]
 
@@ -272,6 +272,25 @@ const buildings_list = [
         ]
     },
     {
+        "id": 110,
+        "type": 1,
+        "rare": 2,
+        "display_name": "强国煤业",
+        "income_offset": 152,
+        "buff_type": [
+            {
+                "bufftype": 4,
+                "value": [0, 40, 80, 120, 160, 200]
+            }
+        ],
+        "benefit_list": [
+            {
+                "building_id": 310,
+                "value": [0, 100, 200, 300, 400, 500]
+            }
+        ],
+    },
+    {
         "id": 200,
         "type": 2,
         "rare": 0,
@@ -406,7 +425,7 @@ const buildings_list = [
         "buff_type": [
             {
                 "bufftype": 3,
-                "value": [0, 100, 20, 30, 40, 50]
+                "value": [0, 10, 20, 30, 40, 50]
             }
         ]
     },
@@ -424,6 +443,42 @@ const buildings_list = [
             {
                 "bufftype": 0,
                 "value": [0, 5, 10, 15, 20, 25]
+            }
+        ]
+    },
+    {
+        "id": 210,
+        "type": 2,
+        "rare": 2,
+        "display_name": "游泳馆",
+        "income_offset": 152,
+        "buff_type": [
+            {
+                "bufftype": 5,
+                "value": [0, 40, 80, 120, 160, 200]
+            },
+        ],
+        "benefit_list": [
+            {
+                "building_id": 310,
+                "value": [0, 100, 200, 300, 400, 500]
+            }
+        ],
+    },
+    {
+        "id": 211,
+        "type": 2,
+        "rare": 2,
+        "display_name": "追梦快递",
+        "income_offset": 140,
+        "buff_type": [
+            {
+                "bufftype": 5,
+                "value": [0, 15, 30, 45, 60, 75]
+            },
+            {
+                "bufftype": 1,
+                "value": [0, 10, 20, 30, 40, 50]
             }
         ]
     },
@@ -580,6 +635,23 @@ const buildings_list = [
                 "value": [0, 10, 20, 30, 40, 50]
             }
         ]
+    },
+    {
+        "id": 310,
+        "type": 3,
+        "rare": 2,
+        "display_name": "梦想公寓",
+        "income_offset": 1235,
+        "benefit_list": [
+            {
+                "building_id": 210,
+                "value": [0, 100, 200, 300, 400, 500]
+            },
+            {
+                "building_id": 110,
+                "value": [0, 100, 200, 300, 400, 500]
+            }
+        ],
     }
 ]
 const level_limit = 2000
@@ -1398,19 +1470,19 @@ const level_cost = [
 const city_mission_buffs = {
     20000:{display_name:"文明城市", perhaps_list_display:["所有+10%"]},
     20001:{display_name:"普惠养老", perhaps_list_display:["离线+10%"]},
-    20002:{display_name:"市民健身", perhaps_list_display:["中式小楼+100% 居民楼+100% 平房+100%", "中式小楼+100% 花园洋房+100% 钢结构房+100%", "中式小楼+100% 钢结构房+100% 居民楼+100%"]},
-    20003:{display_name:"营商环境2.0", perhaps_list_display:["供货+20%"]},
-    20027:{display_name:"反腐风暴", perhaps_list_display:["所有+20%"]},
+    20002:{display_name:"市民健身", perhaps_list_display:["中式小楼+150% 居民楼+80% 平房+80%", "中式小楼+120% 花园洋房+120% 钢结构房+60%", "中式小楼+150% 钢结构房+80% 居民楼+80%"]},
+    20003:{display_name:"营商环境", perhaps_list_display:["供货+20%"]},
+    20027:{display_name:"反腐倡廉", perhaps_list_display:["所有+20%"]},
     20011:{display_name:"服务业示范区", perhaps_list_display:["加油站+150% 便利店+150% 五金店+100%", "商贸中心+150% 菜市场+150% 便利店+100%", "便利店+150% 菜市场+150%", "加油站+100% 服装店+100% 五金店+150%", "商贸中心+150% 服装店+150% 便利店+150%"]},
     20006:{display_name:"绿色工厂", perhaps_list_display:["食品厂+100% 电厂+150% 造纸厂+100%", "食品厂+150% 纺织厂+150% 木材厂+100%", "食品厂+150% 电厂+150% 木材厂+100%", "钢铁厂+150% 食品厂+100% 水厂+150%", "钢铁厂+150% 造纸厂+100% 水厂+150%"]},
-    20015:{display_name:"和谐家园", perhaps_list_display:["住宅+30% 小型公寓+150% 木屋+100%", "住宅+30% 人才公寓+100% 小型公寓+150%", "住宅+30% 花园洋房+150% 小型公寓+100%"]},
+    20015:{display_name:"和谐家园", perhaps_list_display:["住宅+30% 小型公寓+200% 木屋+50%", "住宅+30% 人才公寓+100% 小型公寓+150%", "住宅+30% 花园洋房+150% 小型公寓+100%"]},
     20009:{display_name:"保税商圈", perhaps_list_display:["商业+30% 商贸中心+100% 服装店+150%", "商业+30% 商贸中心+100% 便利店+150%", "商业+30% 商贸中心+100%", "商业+30% 商贸中心+100% 菜市场+150%", "商业+30% 商贸中心+100% 五金店+150%"]},
     20004:{display_name:"工业综合体", perhaps_list_display:["工业+30% 企鹅机械+100% 食品厂+100%", "工业+30% 企鹅机械+100%", "工业+30% 企鹅机械+100% 木材厂+100%", "工业+30% 企鹅机械+100% 水厂+100%", "工业+30% 企鹅机械+100% 电厂+100%"]},
     20016:{display_name:"文明城市", perhaps_list_display:["所有+20% 住宅+30%"]},
     20014:{display_name:"美丽街区", perhaps_list_display:["人才公寓+200% 居民楼+100% 木屋+100%", "中式小楼+200% 钢结构房+100% 木屋+100%", "花园洋房+200% 钢结构房+100% 平房+100%"]},
     20018:{display_name:"营商环境2.0", perhaps_list_display:["供货+20% 木材厂+100% 便利店+100%", "供货+20% 食品厂+100% 菜市场+100%", "供货+20% 造纸厂+100% 便利店+100%"]},
-    20020:{display_name:"头雁效应", perhaps_list_display:["企鹅机械+200% 民食斋+100%", "企鹅机械+200% 零件厂+100% 造纸厂+100%", "民食斋+100% 钢铁厂+200% 木材厂+100%", "企鹅机械+100% 民食斋+200%"]},
-    20021:{display_name:"就业春风", perhaps_list_display:["钢铁厂+200% 造纸厂+100% 服装店+100%", "纺织厂+200% 食品厂+100% 木材厂+100%", "食品厂+200% 木材厂+100% 服装店+100%", "服装店+200% 木材厂+100% 造纸厂+100%"]},
+    20020:{display_name:"招商引资", perhaps_list_display:["企鹅机械+200% 民食斋+100%", "企鹅机械+200% 零件厂+100% 造纸厂+100%", "民食斋+100% 钢铁厂+200% 木材厂+100%", "企鹅机械+100% 民食斋+200%"]},
+    20021:{display_name:"就业创业", perhaps_list_display:["钢铁厂+200% 造纸厂+100% 服装店+100%", "纺织厂+200% 食品厂+100% 木材厂+100%", "食品厂+200% 木材厂+100% 服装店+100%", "服装店+200% 木材厂+100% 造纸厂+100%"]},
     20013:{display_name:"未来社区", perhaps_list_display:["复兴公馆+100% 人才公寓+100% 平房+200%", "空中别墅+100% 中式小楼+150% 小型公寓+150%", "复兴公馆+100% 花园洋房+200% 居民楼+100%", "空中别墅+100% 木屋+150% 人才公寓+100%", "中式小楼+150% 花园洋房+150% 钢结构房+100%"]},
     20005:{display_name:"智慧工业园", perhaps_list_display:["工业+30% 人民石油+100% 食品厂+100%", "工业+30% 人民石油+100% 水厂+100%", "工业+30% 人民石油+100%", "工业+30% 人民石油+100% 木材厂+100%", "工业+30% 人民石油+100% 电厂+100%"]},
     20031:{display_name:"医疗一体化", perhaps_list_display:["在线+20%"]},
@@ -1421,15 +1493,15 @@ const city_mission_buffs = {
     20008:{display_name:"特色商业街", perhaps_list_display:["商业+30% 民食斋+150% 菜市场+100%", "商业+30% 民食斋+150% 便利店+100%", "商业+30% 民食斋+150%", "五金店+100% 商业+30% 民食斋+150%", "商业+30% 民食斋+150% 服装店+100%"]},
     20024:{display_name:"绿色出行", perhaps_list_display:["在线+20% 人民石油+200%"]},
     20017:{display_name:"普惠养老", perhaps_list_display:["离线+20% 花园洋房+100% 小型公寓+100%", "离线+20% 木屋+100% 小型公寓+100%", "离线+20% 中式小楼+100% 居民楼+100%"]},
-    20019:{display_name:"人造太阳", perhaps_list_display:["水厂+100% 电厂+200%", "电厂+100% 水厂+200%"]},
+    20019:{display_name:"清洁能源", perhaps_list_display:["水厂+100% 电厂+200%", "电厂+100% 水厂+200%"]},
     20012:{display_name:"电子商务", perhaps_list_display:["图书城+100% 造纸厂+150% 服装店+100%", "纺织厂+150% 服装店+100% 便利店+100%", "零件厂+150% 五金店+100% 菜市场+100%"]},
     20029:{display_name:"市民文化节", perhaps_list_display:["媒体之声+200% 图书城+100%", "在线+20% 图书城+200%", "在线+20% 媒体之声+200%"]},
     20025:{display_name:"家电下乡", perhaps_list_display:["零件厂+200% 五金店+100% 电厂+100%", "商贸中心+100% 零件厂+200% 五金店+100%"]},
-    20026:{display_name:"百人计划", perhaps_list_display:["复兴公馆+200% 图书城+100%", "复兴公馆+200% 人才公寓+100%", "复兴公馆+200% 花园洋房+100%"]},
+    20026:{display_name:"招才引智", perhaps_list_display:["复兴公馆+200% 图书城+100%", "复兴公馆+200% 人才公寓+100%", "复兴公馆+200% 花园洋房+100%"]},
     20030:{display_name:"强师工程", perhaps_list_display:["图书馆+150% 学校+150%"]},
     20022:{display_name:"扶贫攻坚", perhaps_list_display:["钢结构房+150% 居民楼+150% 小型公寓+100%", "木屋+150% 平房+150% 小型公寓+100%", "钢结构房+150% 平房+150% 小型公寓+100%"]},
-    20028:{display_name:"文化蓝图", perhaps_list_display:["在线+20% 人才公寓+150%", "在线+20% 空中别墅+200%"]},
-    20033:{display_name:"护校安园", perhaps_list_display:["学校+100% 钢结构房+200% 小型公寓+100%", "学校+100% 平房+100% 小型公寓+200%", "学校+200% 平房+200%", "学校+200% 木屋+200%", "学校+100% 木屋+200% 小型公寓+100%"]},
+    20028:{display_name:"文化产业", perhaps_list_display:["在线+20% 人才公寓+150%", "在线+20% 空中别墅+200%"]},
+    20033:{display_name:"平安校园", perhaps_list_display:["学校+100% 钢结构房+200% 小型公寓+100%", "学校+100% 平房+100% 小型公寓+200%", "学校+200% 平房+200%", "学校+200% 木屋+200%", "学校+100% 木屋+200% 小型公寓+100%"]},
 }
 
 const city_missions = [
