@@ -468,7 +468,7 @@ const buildings_list = [
     {
         "id": 211,
         "type": 2,
-        "rare": 2,
+        "rare": 1,
         "display_name": "追梦快递",
         "income_offset": 140,
         "buff_type": [
