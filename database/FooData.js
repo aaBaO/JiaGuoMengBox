@@ -55,7 +55,7 @@ const policy_list = [
     [
         { id:600, stage:6, display_name:"垃圾分类", buff_type:5, enhance_value:[0, 750, 1875, 3750, 5625, 7500]},
         { id:601, stage:6, display_name:"租购并举", buff_type:2, enhance_value:[0, 250, 625, 1250, 1875, 2500]},
-        { id:602, stage:6, display_name:"全名剑圣", buff_type:4, enhance_value:[0, 750, 1875, 3750, 5625, 7500]},
+        { id:602, stage:6, display_name:"全民健身", buff_type:4, enhance_value:[0, 750, 1875, 3750, 5625, 7500]},
         { id:603, stage:6, display_name:"棚户区改造", buff_type:6, enhance_value:[0, 750, 1875, 3750, 5625, 7500]},
         { id:604, stage:6, display_name:"文化惠民", buff_type:0, enhance_value:[0, 250, 625, 1250, 1875, 2500]},
     ],
