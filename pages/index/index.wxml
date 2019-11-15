@@ -6,6 +6,4 @@
     <button bindtap="onclick_city_mission" class="navi-button">城市任务</button>
     <button bindtap="onclick_policy_preview" class="navi-button">政策预览</button>
 </view>
-<view class="bottomad">
-    <ad unit-id="adunit-1a03a974f1b4242d"></ad>
-</view>
+<ad unit-id="adunit-1a03a974f1b4242d"></ad>
